@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found</title>
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+  // Old tutorial URLs: /sparse-ir-tutorial-v2/... moved to /sparse-ir-tutorial/...
+  (function () {
+    var p = location.pathname, old = "/sparse-ir-tutorial-v2/";
+    if (p.indexOf(old) === 0) {
+      location.replace("/sparse-ir-tutorial/" + p.slice(old.length) + location.search + location.hash);
+    }
+  })();
+</script>
+</head><body>
+<main class="wrap">
+  <h1>Page not found</h1>
+  <p>Start from the <a href="/">SpM-lab home page</a> or the
+    <a href="https://spm-lab.github.io/sparse-ir-doc/">sparse-ir documentation</a>.</p>
+</main>
+</body></html>

@@ -1,1 +1,140 @@
-<!doctype html><title>SpM-lab</title>placeholder
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpM-lab</title>
+<meta name="description" content="Open-source tools for imaginary-time Green's functions: the sparse-ir ecosystem (IR, DLR, sparse sampling) and analytic continuation (SpM, Nevanlinna, MiniPole).">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">SpM-lab</p>
+    <h1>Compact representations and analytic continuation of imaginary-time Green's functions</h1>
+    <p class="lede">Open-source libraries for quantum many-body calculations:
+      the intermediate representation (IR), the discrete Lehmann representation (DLR),
+      sparse sampling, minimal pole representations, and sparse-modeling and Nevanlinna analytic continuation.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="sparse-ir">
+  <h2>sparse-ir ecosystem</h2>
+  <p>Libraries for the IR and DLR bases and sparse sampling in Python, Julia, Rust, C and Fortran,
+    sharing one backend and one set of conventions.</p>
+
+  <a class="primary" href="https://spm-lab.github.io/sparse-ir-doc/">
+    <span class="primary-title">Start here: sparse-ir documentation &rarr;</span>
+    <span class="primary-sub">What IR and DLR are, how they came about, shared notation, and which library to use</span>
+  </a>
+
+  <div class="grid">
+    <a class="card" href="https://spm-lab.github.io/sparse-ir-doc/src/history_comparison.html">
+      <h3>History and comparison</h3>
+      <p>How IR (2017), DLR (2021/22) and MiniPole (2023/24) are related, and what each is good for.</p>
+    </a>
+    <a class="card" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">
+      <h3>Notation and conventions</h3>
+      <p>The symbols used across the documentation, with the matching names in each library.</p>
+    </a>
+    <a class="card" href="https://spm-lab.github.io/sparse-ir-tutorial/">
+      <h3>Tutorial (Python, Julia)</h3>
+      <p>Notebooks from basis construction to GW, DMFT, FLEX, TPSC and Eliashberg calculations.</p>
+    </a>
+  </div>
+
+  <h3 class="sub">Libraries</h3>
+  <table>
+    <thead><tr><th>Language</th><th>Package</th><th>Documentation</th></tr></thead>
+    <tbody>
+      <tr><td>Python</td>
+        <td><a href="https://github.com/SpM-lab/sparse-ir">sparse-ir</a> <code>pip install sparse-ir</code></td>
+        <td><a href="https://sparse-ir.readthedocs.io/">sparse-ir.readthedocs.io</a></td></tr>
+      <tr><td>Julia</td>
+        <td><a href="https://github.com/SpM-lab/SparseIR.jl">SparseIR.jl</a> <code>] add SparseIR</code></td>
+        <td><a href="https://spm-lab.github.io/SparseIR.jl/stable/">SparseIR.jl docs</a></td></tr>
+      <tr><td>Rust, C, Fortran</td>
+        <td><a href="https://github.com/SpM-lab/sparse-ir-rs">sparse-ir-rs</a> <code>sparse-ir</code>, <code>sparse-ir-capi</code> on crates.io</td>
+        <td><a href="https://spm-lab.github.io/sparse-ir-rs/">Rust guide and tutorials</a></td></tr>
+    </tbody>
+  </table>
+  <p class="note">sparse-ir-rs is the shared backend: its C API (libsparseir) is what the Python and Julia
+    libraries call, and it ships the Fortran bindings.</p>
+</section>
+
+<section id="analytic-continuation">
+  <h2>Analytic continuation</h2>
+  <p>From imaginary-time or Matsubara data to real-frequency spectra.</p>
+  <div class="grid">
+    <div class="card static">
+      <h3>SpM</h3>
+      <p>Sparse-modeling analytic continuation, including the SpM-Pad&eacute; method (C++).</p>
+      <p class="links"><a href="https://github.com/SpM-lab/SpM">Repository</a> &middot;
+        <a href="https://spm-lab.github.io/SpM/manual/build/html/index.html">Manual</a></p>
+    </div>
+    <div class="card static">
+      <h3>pySpMAC</h3>
+      <p>Sparse-modeling analytic continuation for multi-orbital systems with semi-positive definiteness (Python).</p>
+      <p class="links"><a href="https://github.com/SpM-lab/pySpMAC">Repository</a> &middot;
+        <a href="https://github.com/SpM-lab/admmsolver">admmsolver</a> (the ADMM solver it builds on)</p>
+    </div>
+    <div class="card static">
+      <h3>Nevanlinna.jl</h3>
+      <p>Nevanlinna analytic continuation, with a command-line interface (Julia).</p>
+      <p class="links"><a href="https://github.com/SpM-lab/Nevanlinna.jl">Repository</a></p>
+    </div>
+    <div class="card static">
+      <h3>MiniPole and ESPRIT</h3>
+      <p>Minimal pole representation: a few complex poles fitted to Matsubara data. Available in sparse-ir-rs (Rust and C API).</p>
+      <p class="links"><a href="https://spm-lab.github.io/sparse-ir-rs/tutorials/minipole.html">MiniPole tutorial</a></p>
+    </div>
+  </div>
+  <p class="note">Worked examples: analytic continuation with the IR basis and with SpM in the
+    <a href="https://spm-lab.github.io/sparse-ir-tutorial/src/analytic_continuation_py.html">Python tutorial</a>
+    and the <a href="https://spm-lab.github.io/sparse-ir-rs/tutorials/analytic_continuation.html">Rust guide</a>.</p>
+</section>
+
+<section id="papers">
+  <h2>Key papers</h2>
+  <ul class="refs">
+    <li>H. Shinaoka, J. Otsuki, M. Ohzeki, K. Yoshimi, Compressing Green's function using intermediate representation between imaginary-time and real-frequency domains,
+      <a href="https://doi.org/10.1103/PhysRevB.96.035147">Phys. Rev. B 96, 035147 (2017)</a>.</li>
+    <li>J. Li, M. Wallerberger, N. Chikano, C.-N. Yeh, E. Gull, H. Shinaoka, Sparse sampling approach to efficient ab initio calculations at finite temperature,
+      <a href="https://doi.org/10.1103/PhysRevB.101.035144">Phys. Rev. B 101, 035144 (2020)</a>.</li>
+    <li>M. Wallerberger, S. Badr, S. Hoshino, F. Kakizawa, T. Koretsune, Y. Nagai, K. Nogaki, T. Nomoto, H. Mori, J. Otsuki, S. Ozaki, R. Sakurai, C. Vogel, N. Witt, K. Yoshimi, H. Shinaoka, sparse-ir: Optimal compression and sparse sampling of many-body propagators,
+      <a href="https://doi.org/10.1016/j.softx.2022.101266">SoftwareX 21, 101266 (2023)</a>.</li>
+    <li>J. Otsuki, M. Ohzeki, H. Shinaoka, K. Yoshimi, Sparse modeling approach to analytical continuation of imaginary-time quantum Monte Carlo data,
+      <a href="https://doi.org/10.1103/PhysRevE.95.061302">Phys. Rev. E 95, 061302(R) (2017)</a>.</li>
+    <li>K. Nogaki, J. Fei, E. Gull, H. Shinaoka, Nevanlinna.jl: A Julia implementation of Nevanlinna analytic continuation,
+      <a href="https://doi.org/10.21468/SciPostPhysCodeb.19">SciPost Phys. Codebases 19 (2023)</a>.</li>
+  </ul>
+  <p class="note">For the full list and how IR, DLR and MiniPole relate, see
+    <a href="https://spm-lab.github.io/sparse-ir-doc/src/history_comparison.html">History and comparison</a>.</p>
+</section>
+
+<section id="archive">
+  <h2>Archived and superseded</h2>
+  <table>
+    <thead><tr><th>Repository</th><th>Use instead</th></tr></thead>
+    <tbody>
+      <tr><td>irbasis, irlib</td><td>sparse-ir, SparseIR.jl</td></tr>
+      <tr><td>SparseIR_deprecated.jl</td><td>SparseIR.jl</td></tr>
+      <tr><td>libsparseir, pysparseir, LibSparseIR.jl</td><td>sparse-ir-rs</td></tr>
+      <tr><td>sparse-ir-fortran</td><td><code>fortran/</code> in sparse-ir-rs</td></tr>
+      <tr><td><a href="https://spm-lab.github.io/sparse-ir-tutorial-v1/">sparse-ir-tutorial-v1</a> (for sparse-ir v1)</td>
+        <td><a href="https://spm-lab.github.io/sparse-ir-tutorial/">sparse-ir-tutorial</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p><a href="https://github.com/SpM-lab">github.com/SpM-lab</a> &middot;
+    Issues spanning several projects: <a href="https://github.com/SpM-lab/.github/issues">SpM-lab/.github</a>;
+    issues about one library go to that library's repository.</p>
+</footer>
+</body>
+</html>
