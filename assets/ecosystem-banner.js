@@ -26,7 +26,7 @@
     "background:rgba(31,95,191,.09);border-radius:4px;font:14px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:inherit}" +
     ".spm-eco a{color:inherit;text-decoration:underline;text-underline-offset:2px}" +
     ".spm-eco a:hover{color:#1f5fbf}" +
-    ".spm-eco .spm-eco-title{font-weight:700;margin-right:.5em}" +
+    ".spm-eco .spm-eco-title{font-weight:700;margin-right:.5em;white-space:nowrap}" +
     ".spm-eco .spm-eco-links a{margin-right:.75em;white-space:nowrap}" +
     ".spm-eco .spm-eco-top{float:right;margin-left:1em;font-weight:600;white-space:nowrap}" +
     ".spm-eco.spm-eco-warn{border-left-color:#c2410c;background:rgba(194,65,12,.12)}" +
@@ -47,6 +47,7 @@
     var title = document.createElement("span");
     title.className = "spm-eco-title";
     if (archivedV1) {
+      title.style.whiteSpace = "normal";
       title.textContent = "Archived: this tutorial is for sparse-ir v1 and is no longer maintained.";
       box.appendChild(title);
       var cur = document.createElement("a");
