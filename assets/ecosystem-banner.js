@@ -77,8 +77,8 @@
     document.head.appendChild(style);
 
     // Content containers of the documentation generators in use:
-    // Jupyter Book (pydata theme), Sphinx RTD theme, Documenter.jl, mdBook.
-    var selectors = [".bd-article", ".wy-nav-content", "#documenter article.content", "#content main"];
+    // Jupyter Book (pydata theme), Sphinx RTD theme, Documenter.jl, mdBook 0.5 and 0.4.
+    var selectors = [".bd-article", ".wy-nav-content", "#documenter article.content", "#mdbook-content main", "#content main"];
     var target = null;
     for (var i = 0; i < selectors.length && !target; i++) {
       target = document.querySelector(selectors[i]);
