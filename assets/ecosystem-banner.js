@@ -66,6 +66,8 @@
       a.href = links[i][1];
       a.textContent = links[i][0];
       span.appendChild(a);
+      // A space between the links lets the line wrap on narrow screens.
+      span.appendChild(document.createTextNode(" "));
     }
     box.appendChild(span);
     return box;
