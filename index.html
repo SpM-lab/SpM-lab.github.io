@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SpM-lab</title>
-<meta name="description" content="Open-source tools for imaginary-time Green's functions: the sparse-ir ecosystem (IR, DLR, sparse sampling) and analytic continuation (SpM, Nevanlinna, MiniPole).">
+<meta name="description" content="Open-source tools for imaginary-time Green's functions: the sparse-ir ecosystem (IR, DLR, sparse sampling) and analytic continuation (MiniPole, SpM).">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <h1>Compact representations and analytic continuation of imaginary-time Green's functions</h1>
     <p class="lede">Open-source libraries for quantum many-body calculations:
       the intermediate representation (IR), the discrete Lehmann representation (DLR),
-      sparse sampling, minimal pole representations, and sparse-modeling and Nevanlinna analytic continuation.</p>
+      sparse sampling, minimal pole representations, and analytic continuation.</p>
   </div>
 </header>
 
@@ -68,6 +68,12 @@
   <h2>Analytic continuation</h2>
   <p>From imaginary-time or Matsubara data to real-frequency spectra.</p>
   <div class="grid">
+    <div class="card static recommended">
+      <p class="badge">Recommended</p>
+      <h3>MiniPole and ESPRIT</h3>
+      <p>Minimal pole representation: a few complex poles fitted to Matsubara data, with controlled accuracy and much less sensitive to noise than Nevanlinna continuation. Our recommended starting point. Available in sparse-ir-rs (Rust and C API).</p>
+      <p class="links"><a href="https://spm-lab.github.io/sparse-ir-rs/tutorials/minipole.html">MiniPole tutorial</a></p>
+    </div>
     <div class="card static">
       <h3>SpM</h3>
       <p>Sparse-modeling analytic continuation, including the SpM-Pad&eacute; method (C++).</p>
@@ -80,20 +86,12 @@
       <p class="links"><a href="https://github.com/SpM-lab/pySpMAC">Repository</a> &middot;
         <a href="https://github.com/SpM-lab/admmsolver">admmsolver</a> (the ADMM solver it builds on)</p>
     </div>
-    <div class="card static">
-      <h3>Nevanlinna.jl</h3>
-      <p>Nevanlinna analytic continuation, with a command-line interface (Julia).</p>
-      <p class="links"><a href="https://github.com/SpM-lab/Nevanlinna.jl">Repository</a></p>
-    </div>
-    <div class="card static">
-      <h3>MiniPole and ESPRIT</h3>
-      <p>Minimal pole representation: a few complex poles fitted to Matsubara data. Available in sparse-ir-rs (Rust and C API).</p>
-      <p class="links"><a href="https://spm-lab.github.io/sparse-ir-rs/tutorials/minipole.html">MiniPole tutorial</a></p>
-    </div>
   </div>
   <p class="note">Worked examples: analytic continuation with the IR basis and with SpM in the
     <a href="https://spm-lab.github.io/sparse-ir-tutorial/src/analytic_continuation_py.html">Python tutorial</a>
     and the <a href="https://spm-lab.github.io/sparse-ir-rs/tutorials/analytic_continuation.html">Rust guide</a>.</p>
+  <p class="note"><a href="https://github.com/SpM-lab/Nevanlinna.jl">Nevanlinna.jl</a> (Nevanlinna analytic continuation, Julia) is kept for reference
+    but not recommended: the Nevanlinna method is very sensitive to noise in the input data. MiniPole is its improved successor for this purpose.</p>
 </section>
 
 <section id="papers">
@@ -107,8 +105,8 @@
       <a href="https://doi.org/10.1016/j.softx.2022.101266">SoftwareX 21, 101266 (2023)</a>.</li>
     <li>J. Otsuki, M. Ohzeki, H. Shinaoka, K. Yoshimi, Sparse modeling approach to analytical continuation of imaginary-time quantum Monte Carlo data,
       <a href="https://doi.org/10.1103/PhysRevE.95.061302">Phys. Rev. E 95, 061302(R) (2017)</a>.</li>
-    <li>K. Nogaki, J. Fei, E. Gull, H. Shinaoka, Nevanlinna.jl: A Julia implementation of Nevanlinna analytic continuation,
-      <a href="https://doi.org/10.21468/SciPostPhysCodeb.19">SciPost Phys. Codebases 19 (2023)</a>.</li>
+    <li>L. Zhang, E. Gull, Minimal pole representation and controlled analytic continuation of Matsubara response functions,
+      <a href="https://doi.org/10.1103/PhysRevB.110.035154">Phys. Rev. B 110, 035154 (2024)</a>.</li>
   </ul>
   <p class="note">For the full list and how IR, DLR and MiniPole relate, see
     <a href="https://spm-lab.github.io/sparse-ir-doc/src/history_comparison.html">History and comparison</a>.</p>

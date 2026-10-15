@@ -61,6 +61,8 @@ h3.sub { margin-top: 28px; }
 a.card:hover { border-color: var(--accent); }
 .card p { margin: 0 0 6px; color: var(--muted); font-size: 15px; }
 .card p.links { color: var(--fg); }
+.card.recommended { border: 2px solid var(--accent); }
+.card p.badge { display: inline-block; margin: 0 0 6px; padding: 1px 8px; border-radius: 999px; background: var(--accent); color: var(--accent-fg); font-size: 12px; font-weight: 700; }
 table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { color: var(--muted); font-weight: 600; }
